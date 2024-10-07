@@ -55,10 +55,10 @@ module ensure_binding_overhangs_pages_on_end() {
     }
 }
 
-module ensure_binding_overhangs_pages_on_top_or_bottom(sign) {
+module ensure_binding_overhangs_pages_on_top_or_bottom(direction) {
     difference(){
         children();
-        translate([binding_width,0,sign*height/2-cover_thickness/2]) {
+        translate([binding_width,0,direction*height/2-direction*cover_thickness/2]) {
             cube([width-cover_thickness/2, depth-2*cover_thickness, cover_thickness+overlap], center=true);
         }
     }
