@@ -3,40 +3,57 @@ include <../settings.scad>
 // Medal
 module base_medal(){
     union(){
+        // STL from https://www.thingiverse.com/thing:6708761
         translate([0,0,-8.4])rotate([90,0,90])import("Medal1V3.stl");
         translate([0,0,-1.42])linear_extrude(3, center=true)circle(r=30);
     }
 }
 
 
-engrave_depth=.5;
+stamp_height=.4;
 
 module graphics(){
     scale_factor=.4;
-    translate([0,2,-engrave_depth]) 
-    translate([0,1.5,1.58])
-    linear_extrude(3, center=true)
+    //translate([0,3.5,stamp_height/2-.001])
+    translate([0,3.5,.41])
+    linear_extrude(stamp_height+.2, center=true)
     scale([scale_factor,scale_factor,1])import("dragon-boat-medal-design-cropped-removed-small-text.svg", center= true, dpi=300);
 }
 
 module text1(){
-    translate([0,-20,.41-engrave_depth])
-    linear_extrude(engrave_depth+.2, center=true)
+    translate([0,-20,stamp_height])
+    linear_extrude(stamp_height+.2, center=true)
     text("DRAGON BOAT", font="ARIAL:style=Bold", size=4, halign="center");
 }
 
 module text2(){
-    translate([0,-26,.41-engrave_depth])
-    linear_extrude(engrave_depth+.2, center=true)
+    translate([0,-26,stamp_height])
+    linear_extrude(stamp_height+.2, center=true)
     text("FESTIVAL", font="ARIAL:style=Bold", size=4, halign="center");
 }
+/*
+module outer_ring() {
+    translate([0,0,-2.2+stamp_height])
+    difference(){
+        cylinder(h=5, r=33.28, center=true);
+        cylinder(h=5+.002, r=32.28, center=true);
+    }
+}
+*/
+// graphics + text
+module stamp(){
+    graphics();
+    text1();
+    text2();
+
+
+}
+
 
 module medal_with_graphics(){
-    difference(){
+    union(){
         base_medal();
-        graphics();
-        text1();
-        text2();
+        stamp();
     }
 }
 
