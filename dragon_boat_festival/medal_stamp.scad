@@ -74,11 +74,19 @@ module hook_sides(){
 }
 
 
-
-union(){
-    medal_with_graphics();
-    loop_top();
-    translate([0,0,2])hook_sides();
-    translate([0,-2,2])hook_sides();
-    translate([0,-4,2])hook_sides();
+module medal_stamp(){
+    union(){
+        medal_with_graphics();
+        loop_top();
+        translate([0,0,2])hook_sides();
+        translate([0,-2,2])hook_sides();
+        translate([0,-4,2])hook_sides();
+    }
 }
+
+difference(){
+    medal_stamp();
+    // shave the bottom to ensure flat
+    translate([0,0,-13.25])cylinder(h=10, r=50,center=true);
+}
+
