@@ -1,3 +1,4 @@
 *.gcode
 *.3mf
 .DS_STORE
+*.stl
