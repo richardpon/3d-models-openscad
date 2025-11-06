@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img" aria-label="Good Morning (早上好) in Chinese">
+  <title>Good Morning (早上好) in Chinese</title>
+  <rect x="0" y="0" width="800" height="400" fill="white"/>
+  <g transform="translate(400.0,200.0)">
+    <text x="0" y="0" font-family="Noto Sans CJK SC, PingFang SC, Microsoft YaHei, Heiti SC, sans-serif"
+          font-size="180" text-anchor="middle" dominant-baseline="central" fill="black">早上好</text>
+  </g>
+</svg>
