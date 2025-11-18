@@ -1,4 +1,4 @@
-include <../lib/settings.scad>
+include <../settings.scad>
 
 part_radius=40;
 w=132 - 2*part_radius;
@@ -44,7 +44,7 @@ module inside_lip(){
 module cross_hatch(){
     width = w+2*part_radius+.1;
     translate([0,0,height/2])cube([width,wall_thickness, height-5], center=true);
-    translate([0,0,height/2])cube([wall_thickness,width, height-5], center=true);
+    //translate([0,0,height/2])cube([wall_thickness,width, height-5], center=true);
 }
 
 module finished_container(){

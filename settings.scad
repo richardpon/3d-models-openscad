@@ -1,4 +1,2 @@
-$fn = $preview ? 32:64;
-$fa = 12;
-$fs = 3;
+$fn = $preview ? 32:128;
 
