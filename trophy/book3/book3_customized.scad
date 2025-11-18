@@ -11,7 +11,7 @@ module book(){
 }
 
 module text1(){
-    translate([13.7,1.6,2])rotate([90,0,0])linear_extrude(2)text("2024", size=font_size,font=font);
+    translate([13.7,1.6,2])rotate([90,0,0])linear_extrude(2)text("2025", size=font_size,font=font);
 }
 
 
